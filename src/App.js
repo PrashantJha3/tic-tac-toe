@@ -1,13 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-     
-    </div>
-  );
+
+import { BrowserRouter, Route } from 'react-router-dom';
+
+import { Board } from './components/board'
+import { Scoreboard } from './components/scoreboard'
+
+import './styles/board.css';
+import './styles/box.css';
+import './styles/button.css';
+// Create App component
+class App extends React.Component {
+  render() {
+    return (
+      <div className="app">
+        <BrowserRouter>
+          <Route exact path="/" component={Scoreboard}/>
+          <Route path="/board" component={Board}/>
+        </BrowserRouter>
+      </div>
+    )
+  }
 }
 
 export default App;
